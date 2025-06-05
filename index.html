@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Miel Naturel DE ABDOU AMBOUTA SEYNI</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fffbe6;
+      background-image: url('abeilles.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       margin: 0;
       padding: 20px;
       text-align: center;
     }
     h1 {
       color: #f4a100;
+      font-size: 2.2em;
+      margin-bottom: 30px;
     }
-    img {
-      width: 80%;
-      max-width: 300px;
-      border-radius: 10px;
-      margin: 10px 0;
+    .produits {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
     .produit {
       background: #fff;
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      width: 45%;
+    }
+    .produit img {
+      width: 100%;
+      border-radius: 10px;
     }
     .bouton {
       display: inline-block;
@@ -42,23 +52,173 @@
     .email {
       background-color: #0072C6;
     }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0 20px 0;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      background-color: #f4a100;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      flex: 1 1 180px;
+      max-width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .tab-btn:hover, .tab-btn.active {
+      background-color: #d18c00;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    }
+    .tab-content {
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      font-size: 1.05em;
+      line-height: 1.6;
+      display: none;
+      text-align: left;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .map-container {
+      margin: 50px auto;
+      max-width: 800px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      .produit {
+        width: 90%;
+      }
+      h1 {
+        font-size: 1.7em;
+      }
+      .tab-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Bienvenue DANS LE SITE DU Miel Naturel AMBOUTA</h1>
+  <h1>BIENVENUE DANS LE SITE DU MIEL NATUREL AMBOUTA SEYNI</h1>
 
-  <div class="produit">
-    <h2>Miel Pur</h2>
-    <img src="miel1.jpg" alt="Miel Pur">
-    <p>Prix : 3 000 FCFA</p>
+  <div class="produits">
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel1.jpg" alt="Miel Pur" />
+      <p><b>Prix : 2000 FCFA le demi-litre</b></p>
+    </div>
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel5.jpg" alt="Miel Naturel" />
+      <p><b>Prix : 4000 FCFA le litre</b></p>
+    </div>
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel8.jpg" alt="Miel avec cire" />
+      <p><b>Prix : 9000 FCFA le litre de la cire du miel</b></p>
+    </div>
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel12.jpg" alt="Miel Naturel" />
+      <p><b>Prix : 4000 FCFA le litre</b></p>
+    </div>
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel11.jpg" alt="Miel Naturel" />
+      <p><b>Prix : 2000 FCFA le demi-litre</b></p>
+    </div>
+    <div class="produit">
+      <h2>Miel Naturel</h2>
+      <img src="miel4.jpg" alt="Miel Naturel" />
+      <p><b>Prix : 2000 FCFA le demi-litre</b></p>
+    </div>
   </div>
 
-  <div class="produit">
-    <h2>Miel au Citron</h2>
-    <img src="miel2.jpg" alt="Miel Citron">
-    <p>Prix : 3 500 FCFA</p>
+  <!-- IMAGE CLIQUABLE -->
+  <div style="text-align: center; margin: 40px auto;">
+    <h2 style="color: #f4a100;">Passez votre commande dès maintenant ! 🍯</h2>
+    <a href="https://wa.me/22789121738?text=Bonjour%2C%20je%20souhaite%20commander%20du%20miel%20pur." target="_blank">
+      <img src="miel12.jpg" alt="Commande WhatsApp" style="max-width: 350px; width: 90%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+    </a>
   </div>
-<a class="bouton whatsapp" href="https://wa.me/22789121738" target="_blank">Commander via WhatsApp</a>
-  <a class="bouton email" href="mailto: abdouamboutaseyni6@gmail.com">Commander par Email</a>
+
+  <!-- BOUTONS -->
+  <a class="bouton whatsapp" href="https://wa.me/22789121738?text=Bonjour%2C%20je%20souhaite%20commander%20du%20miel%20pur." target="_blank">📱 Commander via WhatsApp</a>
+  <a class="bouton email" href="mailto:abdouamboutaseyni6@gmail.com?subject=Commande%20de%20miel&body=Bonjour%2C%20je%20souhaite%20commander%20du%20miel.">✉️ Commander par Email</a>
+
+  <h1>Cliquez pour plus d'informations</h1>
+
+  <!-- ONGLET -->
+  <div class="tabs">
+    <div class="tab-btn active" data-tab="apropos">À propos</div>
+    <div class="tab-btn" data-tab="temoignages">Témoignages</div>
+    <div class="tab-btn" data-tab="questions">Questions fréquentes</div>
+  </div>
+
+  <div id="apropos" class="tab-content active">
+    <h2>À propos de notre miel</h2>
+    <p>Notre miel est 100% naturel <b>VENANT DU PARC W ET DE LIPTAKO_GOURMA</b>, récolté avec soin dans les meilleures fleurs(abeilles) sauvages de la région de tillabery(Niamey-Niger).
+    <b>TEL:+22789121738/95836695</b></p>
+  </div>
+
+  <div id="temoignages" class="tab-content">
+    <h2>Témoignages</h2>
+    <p>"Le meilleur miel que j'ai jamais goûté ! Très pur et savoureux." - Fatou</p>
+    <p>"Un vrai régal, livraison rapide et service impeccable." - Mamadou</p>
+  </div>
+
+  <div id="questions" class="tab-content">
+    <h2>Questions fréquentes</h2>
+    <p><strong>Q :</strong> Le miel est-il bio ?</p>
+    <p><strong>R :</strong> Oui, notre miel est 100% naturel sans aucun additif.</p>
+    <p><strong>Q :</strong> Quels sont les modes de livraison ?</p>
+    <p><strong>R :</strong> Livraison par WhatsApp ou email après commande.</p>
+  </div>
+
+  <!-- GOOGLE MAPS -->
+  <div class="map-container">
+    <h2 style="color:#f4a100; padding: 10px;"><b>📍 NOUS SOMMES A L'UNIVERSITÉ ABDOU MOUMOUNI DE NIAMEY</b></h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127649.39804166102!2d2.0200247!3d13.5127775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11cda3b2f6cf4b23%3A0x7f771dc6f1e40743!2sNiamey!5e0!3m2!1sfr!2sne!4v1717600000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+  <!-- SCRIPT ONGLET -->
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents.forEach(c => c.classList.remove('active'));
+        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
 </body>
-</html>
+        </html>
